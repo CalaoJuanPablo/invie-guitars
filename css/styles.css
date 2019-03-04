@@ -54,10 +54,15 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding-left: 0;
 }
 
 .header .menu ul li {
   padding-left: 30px;
+}
+
+.header .menu ul li:nth-child(1) {
+  padding-left: 0;
 }
 
 #portada {
@@ -148,13 +153,13 @@ footer .contact .contact-data strong {
 }
 
 footer form.form {
-  width: 450px;
+  flex-basis: 48%;
   display: flex;
   justify-content: space-between;
 }
 
 footer form.form .col-1 {
-  padding-right: 20px;
+  padding-right: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -170,33 +175,9 @@ footer form.form .col-2 {
 footer form.form input[type=text],
 footer form.form input[type=email],
 footer form.form textarea {
+  margin: 5px 0;
   padding: 5px 10px;
   border: none;
-}
-
-@media (max-width: 800px) {
-  #guitarra-1, #guitarra-2 {
-    flex-direction: column;
-  }
-}
-
-@media(max-width: 700px) {
-  footer .container {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-
-  footer .container .contact {
-    flex-basis: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center
-  }
-
-  footer form.form {
-    flex-basis: 100%;
-    margin-bottom: 30px;
-  }
 }
 
 footer form .intereses label {
@@ -221,4 +202,89 @@ td {
 table, th, td {
   border: 1px solid #273b47;
   border-collapse: collapse;
+}
+
+@media (max-width: 800px) {
+  #guitarra-1, #guitarra-2 {
+    flex-direction: column;
+  }
+}
+
+@media(max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer .container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  footer .container .contact {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+  }
+
+  footer form.form {
+    flex-basis: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+@media(max-width: 450px) {
+  .header .menu a {
+    font-size: 20px;
+  }
+
+  #portada h1.titulo {
+    font-size: 50px;
+  }
+
+  #portada h3.slogan{
+    font-size: 18px;
+  }
+
+  #guitarras h2.titulo{
+    font-size: 24px;
+  }
+
+  #guitarras #guitarra-1 h3,
+  #guitarras #guitarra-2 h3 {
+    font-size: 36px
+  }
+
+  footer form.form {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer form.form .col-1 {
+    padding-right: 0;
+    width: 100%;
+  }
+
+  footer form.form input[type=email] {
+    margin-bottom: 20px;
+  }
+
+  footer form.form .col-1 .sexo,
+  footer form.form .col-1 .intereses {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  footer form.form textarea {
+    margin-bottom: 20px;
+  }
+
+  table th,
+  table td {
+    font-size: 12px;
+  }
 }
